@@ -1,11 +1,27 @@
 import './App.css'
 import NamePrinter from './mycomponents/NamePrinter'
 
-function App() {
+const person =[
+  {
+  myName: 'adolphe',
+  age: 20
+},
+{
+  myName: 'ngoga',
+  age: 25
+},
+{
+  myName: 'prince',
+  age: 15
+}
+] 
 
+function App() {
   return (
     <>
-    <NamePrinter/>
+     {person.map((element, index) =>{
+      return <NamePrinter key={index} myName={element.myName} age={element.age}/> 
+    })}
     </>
   )
 }
